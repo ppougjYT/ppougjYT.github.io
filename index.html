@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Browser PC</title>
+<title>Browser VM</title>
 
-<script src="https://copy.sh/v86/build/libv86.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/copy/v86@master/build/libv86.js"></script>
 
 <style>
 body{
@@ -30,16 +30,23 @@ border:2px solid white;
 
 <script>
 
-var emulator = new V86({
+const emulator = new V86({
 
 screen_container: document.getElementById("screen_container"),
 
-bios: { url: "https://copy.sh/v86/bios/seabios.bin" },
-vga_bios: { url: "https://copy.sh/v86/bios/vgabios.bin" },
+bios: {
+url: "https://cdn.jsdelivr.net/gh/copy/v86@master/bios/seabios.bin"
+},
 
-fda: { url: "https://copy.sh/v86/images/freedos722.img" },
+vga_bios: {
+url: "https://cdn.jsdelivr.net/gh/copy/v86@master/bios/vgabios.bin"
+},
 
-memory_size: 128 * 1024 * 1024,
+fda: {
+url: "https://cdn.jsdelivr.net/gh/copy/v86@master/images/freedos722.img"
+},
+
+memory_size: 64 * 1024 * 1024,
 vga_memory_size: 8 * 1024 * 1024,
 
 autostart: true
